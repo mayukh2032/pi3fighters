@@ -45,3 +45,10 @@ mv cloudml-samples-master/ samples/
 
 export PATH=${HOME}/.local/bin:${PATH}
 
+# check environment
+
+# Check that the Cloud ML SDK is installed.
+
+ curl https://raw.githubusercontent.com/mayukh2032/pi3fighters/master/checkPi3Environment.py | python3
+
+
