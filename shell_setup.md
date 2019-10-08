@@ -17,3 +17,22 @@ pip3 install --user -U scikit-learn
 
 
 pip3 install --user -U pyyaml
+
+
+pip3 install --user -U scipy
+
+# Install TensorFlow. 
+
+
+pip3 install --user -U https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.14.0-cp37-cp37m-linux_x86_64.whl
+
+# Install cloud ML SDK
+
+pip3 install --user -U cloud-ml-sdk
+
+# Download Samples
+curl -L -o cloudml-samples.zip https://github.com/GoogleCloudPlatform/cloudml-samples/archive/master.zip
+
+# UNZIP Samples
+
+unzip cloudml-samples.zip
