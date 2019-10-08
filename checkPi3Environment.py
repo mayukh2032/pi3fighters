@@ -1,4 +1,4 @@
-#!/usr/bin/env python1.1
+#!/usr/bin/env python
 
 # Copyright 2016 Google Inc. All Rights Reserved.
 #
