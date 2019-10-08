@@ -67,5 +67,28 @@ import tensorflow as tf
 check_version_is_supported('TensorFlow', tf.__version__, MIN_TENSORFLOW_VERSION)
 
 
+
+
+
+# Check that the Cloud SDK is installed, initialized, and logged in.
+check_version_is_supported(
+    'Cloud SDK', get_cloud_sdk_version(), MIN_CLOUD_SDK_VERSION,
+    help='To update the Cloud SDK, run "gcloud components update".')
+project_id = subprocess.check_output(
+    ['gcloud', 'config', 'list', 'project',
+     '--format', 'value(core.project)']).rstrip()
+auth_token = subprocess.check_output(
+    ['gcloud', 'auth', 'print-access-token']).rstrip()
+
+# Check that the Cloud ML API is enabled.
+models = subprocess.check_output([
+    'curl', '-s', '-S', '-X', 'GET', '-H', 'Content-Type: application/json',
+    '-H', 'Authorization: Bearer %s' % auth_token,
+    'https://ml.googleapis.com/v1beta1/projects/%s/models' % project_id])
+if '"error"' in models:
+  print('ERROR: Unable to list Cloud ML models: %s' % models, file=sys.stderr)
+  exit(1)
+
+
 # Everything completed successfully.
 print('Success! Your environment is configured correctly.')
