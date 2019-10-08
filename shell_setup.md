@@ -36,3 +36,12 @@ curl -L -o cloudml-samples.zip https://github.com/GoogleCloudPlatform/cloudml-sa
 # UNZIP Samples
 
 unzip cloudml-samples.zip
+
+# Move to Samples
+
+mv cloudml-samples-master/ samples/
+
+# Update Path Variable
+
+export PATH=${HOME}/.local/bin:${PATH}
+
