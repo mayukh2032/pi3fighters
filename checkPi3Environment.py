@@ -67,7 +67,7 @@ import tensorflow as tf
 check_version_is_supported('TensorFlow', tf.__version__, MIN_TENSORFLOW_VERSION)
 
 # Check that the Cloud ML SDK is installed.
-import cloud.ml
+import cloudml
 check_version_is_supported(
     'Cloud ML SDK', get_version_from_pip('cloudml'), MIN_CLOUD_ML_SDK_VERSION)
 
